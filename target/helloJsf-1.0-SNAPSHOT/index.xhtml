@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+    Calculate
+    <br />
+
+    <h:form style="margin: 50px">
+
+
+        <span class="ui-float-label" style="margin: 50px">
+       <p:inputText id="float-input1" value="#{calculateBean.number1}" />
+       <p:outputLabel for="@previous" value="Number 1" />
+   </span>
+
+        <span class="ui-float-label" style="margin: 50px">
+       <p:inputText id="float-input2" value="#{calculateBean.number2}" />
+       <p:outputLabel for="@previous" value="Number 2" />
+   </span >
+
+        <p:commandButton value="Toplam"
+                         id="sum1"
+                         update="resultId"
+                         action="#{calculateBean.sum()}"
+                         style="margin-right:20px; margin-top: 50px"
+                         styleClass="ui-priority-primary" />
+
+        <p:commandButton value="Çıkarma"
+                         id="diff1"
+                         update="resultId"
+                         action="#{calculateBean.diff()}"
+                         style="margin-right:20px; margin-top: 50px"
+                         styleClass="ui-priority-primary" />
+
+        <p:commandButton value="Çarpma "
+                         id="multi1"
+                         update="resultId"
+                         action="#{calculateBean.multi()}"
+                         style="margin-right:20px; margin-top: 50px"
+                         styleClass="ui-priority-primary" />
+
+        <p:commandButton value="Bölme"
+                         id="div1"
+                         update="resultId"
+                         action="#{calculateBean.divide()}"
+                         style="margin-right:20px; margin-top: 50px"
+                         styleClass="ui-priority-primary" />
+
+        <p:outputLabel value="Sonuç: " />
+        <p:outputLabel id="resultId" value="#{calculateBean.result}" />
+
+    </h:form>
+
+</h:body>
+</html>
